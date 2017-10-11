@@ -20,7 +20,7 @@
         <!-- versionCode is optional and Android only -->
 		<feature name="http://api.phonegap.com/1.0/network" />
 		<access origin="*" subdomains="true" />
-		<access origin="*.phonegap.com" /><preference name="phonegap-version" value="cli-6.3.0" />
+		<access origin="*.phonegap.com" /><preference name="phonegap-version" value="cli-6.5.0" />
 		
 <!--<gap:plugin name="org.apache.cordova.device-motion" />-->
 <!--<gap:plugin name="org.apache.cordova.dialogs" />-->
