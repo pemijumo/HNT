@@ -24,10 +24,10 @@
 		
 <!--<gap:plugin name="org.apache.cordova.device-motion" />-->
 <!--<gap:plugin name="org.apache.cordova.dialogs" />-->
-<gap:plugin name="org.apache.cordova.media-capture" />
+<!--<gap:plugin name="org.apache.cordova.media-capture" />
 <gap:plugin name="org.apache.cordova.geolocation" />
 <gap:plugin name="org.apache.cordova.contacts" />
-<gap:plugin name="org.apache.cordova.media" />
+<gap:plugin name="org.apache.cordova.media" />-->
 		
 		
     </widget>
