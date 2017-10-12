@@ -5,7 +5,7 @@ var fn = {
         else
             window.location.href = "#home";
         */
-        $('#btnEnviar').on('click', fn.getUtilidad);
+        $('#btnEnviar').on('click', fn.OnSuccess);
         // $('#txtPrecio').on('click', fn.getPrice);
 
     },
