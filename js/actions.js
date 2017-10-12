@@ -14,10 +14,10 @@ var fn = {
         //document.addEventListener("load", fn.init, false);
        // window.addEventListener("deviceready", fn.init, false);
         window.addEventListener("load", fn.init, false);
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        //navigator.geolocation.getCurrentPosition(onSuccess, onError);
     },
 
-    onSuccess: function (position) {
+    onSuccess: function () {
         alert('hola pemiijumo');
     //    var element = document.getElementById('geolocation');
     //    element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
