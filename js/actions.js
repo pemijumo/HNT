@@ -5,7 +5,7 @@ var fn = {
         else
             window.location.href = "#home";
         */
-        $('#btnEnviar').on('click', fn.OnSuccess);
+        $('#btnEnviar').on('click', fn.getUtilidad);
         // $('#txtPrecio').on('click', fn.getPrice);
 
     },
@@ -17,24 +17,8 @@ var fn = {
         //navigator.geolocation.getCurrentPosition(onSuccess, onError);
     },
 
-    onSuccess: function () {
-        alert('hola pemiijumo');
-    //    var element = document.getElementById('geolocation');
-    //    element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
-    //'Longitude: ' + position.coords.longitude + '<br />' +
-    //'Altitude: ' + position.coords.altitude + '<br />' +
-    //'Accuracy: ' + position.coords.accuracy + '<br />' +
-    //'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
-    //'Heading: ' + position.coords.heading + '<br />' +
-    //'Speed: ' + position.coords.speed + '<br />' +
-    //'Timestamp: ' + position.timestamp + '<br />';
-    },
-    onError: function () {
-        alert('error');
-    },
-
     getUtilidad: function (){
-        //alert ("Hola pemijumo");
+        alert ("Hola pemijumo");
         //var onSuccess = function (position) {
         //    alert('Latitude: ' + position.coords.latitude + '\n' +
         //        'Longitude: ' + position.coords.longitude + '\n' +
