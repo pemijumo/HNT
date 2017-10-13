@@ -75,7 +75,7 @@
     <!--<plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />-->
-    <plugin name="com.adobe.plugins.pushplugin" />
+      <plugin name="phonegap-plugin-push" spec="2.0.0" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
