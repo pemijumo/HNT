@@ -16,6 +16,19 @@ var fn = {
         */
         $('#btnEnviar').on('click', fn.getUtilidad);
         // $('#txtPrecio').on('click', fn.getPrice);
+        var push = PushNotification.init({ "android": { "senderID": "AIzaSyCDVAFiUF4M2dLwg_5EEMPQcO-6E0TZ0nU" } });
+        push.on('registration', function (data) {
+            console.log(data.registrationId);
+            document.getElementById("gcm_id").innerHTML = data.registrationId;
+        });
+
+        push.on('notification', function (data) {
+            alert(data.title + " Message: " + data.message);
+        });
+
+        push.on('error', function (e) {
+            alert(e);
+        });
 
     },
     
