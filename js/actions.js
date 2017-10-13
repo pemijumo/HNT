@@ -1,3 +1,12 @@
+//var UrlWCF = "http://localhost:8732/Design_Time_Addresses/HNTService/Service1/";
+var UrlWCF = "http://192.168.2.100:70/WS/HNTService.Service1.svc/";
+var ms = '';
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 1000
+};
+
 var fn = {
     init: function (){
         /*if(!fn.estadoRegistro())
@@ -18,33 +27,36 @@ var fn = {
     },
 
     getUtilidad: function (){
-        navigator.geolocation.getCurrentPosition(
-            function (pocicion) {
-                var cve = $("#cve").val();
-                var LatitudCarga = pocicion.coords.longitude;
-                var LongitudCarga = pocicion.coords.latitude;
+        navigator.geolocation.getCurrentPosition(success, error, options);
+        //    //function (pocicion) {
+        //    //    var cve = $("#cve").val();
+        //    //    var LatitudCarga = pocicion.coords.latitude;
+        //    //    var LongitudCarga = pocicion.coords.longitude;
+        //    //    $.ajax({
+        //    //        url: "http://localhost:8732/Design_Time_Addresses/HNTService/Service1/RegistraBitacora",
+        //    //        data: { clave: cve, latitud: LatitudCarga, longitud: LongitudCarga},
+        //    //        // data: { usuario : "LUISL" , latitud: LatitudComida , longitud : LongitudComida , idComidaReparto : 0},
+        //    //        type: "GET",
+        //    //        //timeout: 10000,
+        //    //        contentType: "application/json; charset=utf-8",
+        //    //        dataType: "jsonp",
+        //    //        success: function (data) {
+        //    //           // $.mobile.loading('hide');
+        //    //            alert(data);
+        //    //        },
+        //    //        error: function (err) {
+        //    //            //$.mobile.loading('hide');
+        //    //            alert("Revise su conexón a internet y vuelva a intentarlo");
+        //    //        }
+        //    //    });
 
-                //$.ajax({
-                //    url: "http://localhost:16125/Service1.svc/" + "RegistraBitacora",
-                //    data: { Clave: cve, Latitud: LatitudCarga, Longitud: LongitudCarga},
-                //    // data: { usuario : "LUISL" , latitud: LatitudComida , longitud : LongitudComida , idComidaReparto : 0},
-                //    type: "GET",
-                //    timeout: 3,
-                //    contentType: "application/json; charset=utf-8",
-                //    dataType: "jsonp",
-                //    success: function (data) {
-                //        $.mobile.loading('hide');
-                //        alert("Buen Viaje");
-                //    },
-                //    error: function (err) {
-                //        $.mobile.loading('hide');
-                //        alert("Revise su conexón a internet y vuelva a intentarlo");
-                //    }
-                //});
-                //alert(LatitudCarga);
-            });
+        //    //});
+        //    success, error, options
+        //);
 
     },
+
+    
 
     getPrice: function (){
         var dUtilidad  = $("#txtUtilidad").val();
@@ -81,5 +93,36 @@ var fn = {
         alert("Error connection: " + response.d);
     }
 }
+
+function success(pocicion) {
+    var cve = $("#cve").val();
+    var LatitudCarga = pocicion.coords.latitude;
+    var LongitudCarga = pocicion.coords.longitude;
+    $.ajax({
+        url: UrlWCF + "RegistraBitacora",
+        data: { clave: cve, latitud: LatitudCarga, longitud: LongitudCarga},
+        // data: { usuario : "LUISL" , latitud: LatitudComida , longitud : LongitudComida , idComidaReparto : 0},
+        type: "GET",
+        //timeout: 10000,
+        contentType: "application/json; charset=utf-8",
+        dataType: "jsonp",
+        success: function (data) {
+            // $.mobile.loading('hide');
+            alert(data);
+        },
+        error: function (err) {
+            //$.mobile.loading('hide');
+            alert("Revise su conexón a internet y vuelva a intentarlo");
+        }
+    });
+    //console.log('Your current position is:');
+    //console.log('Latitude : ' + crd.latitude);
+    //console.log('Longitude: ' + crd.longitude);
+    //console.log('More or less ' + crd.accuracy + ' meters.');
+};
+
+function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+};
 
 $(fn.deviceready);
