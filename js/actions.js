@@ -20,10 +20,28 @@ var fn = {
     getUtilidad: function (){
         navigator.geolocation.getCurrentPosition(
             function (pocicion) {
+                var cve = $("#cve").val();
                 var LatitudCarga = pocicion.coords.longitude;
                 var LongitudCarga = pocicion.coords.latitude;
 
-                alert(LatitudCarga);
+                //$.ajax({
+                //    url: "http://localhost:16125/Service1.svc/" + "RegistraBitacora",
+                //    data: { Clave: cve, Latitud: LatitudCarga, Longitud: LongitudCarga},
+                //    // data: { usuario : "LUISL" , latitud: LatitudComida , longitud : LongitudComida , idComidaReparto : 0},
+                //    type: "GET",
+                //    timeout: 3,
+                //    contentType: "application/json; charset=utf-8",
+                //    dataType: "jsonp",
+                //    success: function (data) {
+                //        $.mobile.loading('hide');
+                //        alert("Buen Viaje");
+                //    },
+                //    error: function (err) {
+                //        $.mobile.loading('hide');
+                //        alert("Revise su conexón a internet y vuelva a intentarlo");
+                //    }
+                //});
+                //alert(LatitudCarga);
             });
 
     },
