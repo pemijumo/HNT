@@ -97,7 +97,7 @@
     <platform name="android">
       <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
-        <icon src="img/PJ.ico" density="ldpi" />
+        <icon src="img/PJ.png" density="ldpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
