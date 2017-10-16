@@ -16,19 +16,19 @@ var fn = {
         */
         $('#btnEnviar').on('click', fn.getUtilidad);
         // $('#txtPrecio').on('click', fn.getPrice);
-        var push = PushNotification.init({ "android": { "senderID": "AIzaSyCDVAFiUF4M2dLwg_5EEMPQcO-6E0TZ0nU" } });
-        push.on('registration', function (data) {
-            console.log(data.registrationId);
-            document.getElementById("gcm_id").innerHTML = data.registrationId;
-        });
+        //var push = PushNotification.init({ "android": { "senderID": "AIzaSyCDVAFiUF4M2dLwg_5EEMPQcO-6E0TZ0nU" } });
+        //push.on('registration', function (data) {
+        //    console.log(data.registrationId);
+        //    document.getElementById("gcm_id").innerHTML = data.registrationId;
+        //});
 
-        push.on('notification', function (data) {
-            alert(data.title + " Message: " + data.message);
-        });
+        //push.on('notification', function (data) {
+        //    alert(data.title + " Message: " + data.message);
+        //});
 
-        push.on('error', function (e) {
-            alert(e);
-        });
+        //push.on('error', function (e) {
+        //    alert(e);
+        //});
 
     },
     
@@ -39,7 +39,13 @@ var fn = {
         //navigator.geolocation.getCurrentPosition(onSuccess, onError);
     },
 
-    getUtilidad: function (){
+    getUtilidad: function () {
+        $.mobile.loading('show', {
+            text: 'reportando...',
+            textVisible: true,
+            theme: 'a',
+            html: ""
+        });
         navigator.geolocation.getCurrentPosition(success, error, options);
         //    //function (pocicion) {
         //    //    var cve = $("#cve").val();
@@ -122,10 +128,12 @@ function success(pocicion) {
         success: function (data) {
             // $.mobile.loading('hide');
             alert(data);
+            $.mobile.loading("hide");
         },
         error: function (err) {
             //$.mobile.loading('hide');
             alert("Revise su conexón a internet y vuelva a intentarlo");
+            $.mobile.loading("hide");
         }
     });
     //console.log('Your current position is:');
@@ -136,6 +144,7 @@ function success(pocicion) {
 
 function error(err) {
     console.warn('ERROR(' + err.code + '): ' + err.message);
+    $.mobile.loading("hide");
 };
 
 $(fn.deviceready);
