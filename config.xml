@@ -83,6 +83,7 @@
     <!--
         <plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+    <icon src="PJ.png" />
       
     <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
@@ -97,7 +98,7 @@
     <platform name="android">
       <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
-        <icon src="img/PJ.png" density="ldpi" />
+        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
