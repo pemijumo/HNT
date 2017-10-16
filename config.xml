@@ -7,7 +7,7 @@
 
         
 
-        <name>HNT</name>
+        <name>Halconet Alerts</name>
 
         <description>
            Aplicacion
@@ -75,7 +75,8 @@
     <!--<plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />-->
-      <plugin name="phonegap-plugin-push" spec="2.0.0" />
+    <plugin name="phonegap-plugin-push" spec="2.0.0" />
+    <gap:plugin name="com.pushbots.push" version="1.2.1" supported="" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -94,8 +95,9 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <resource-file src="google-services.json" target="google-services.json" />
+      <resource-file src="google-services.json" target="google-services.json" />
         <allow-intent href="market:*" />
+        <icon src="img/PJ.ico" density="ldpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
