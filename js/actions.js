@@ -2,6 +2,7 @@
 //var UrlWCF = "http://192.168.2.100:70/WS/HNTService.Service1.svc/";
 var UrlWCF = "http://serverpjsap.ddns.net:100/wcf/WcfServiceLibrary1.Json.svc/";
 var ms = '';
+var variableN = '';
 var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -30,6 +31,7 @@ var fn = {
         //push.on('error', function (e) {
         //    alert(e);
         //});
+
 
     },
     
